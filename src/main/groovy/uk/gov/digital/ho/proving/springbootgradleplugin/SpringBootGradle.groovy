@@ -1,4 +1,4 @@
-package uk.gov.digital.ho.proving
+package uk.gov.digital.ho.proving.springbootgradleplugin
 
 import com.wiredforcode.gradle.spawn.KillProcessTask
 import com.wiredforcode.gradle.spawn.SpawnPlugin
@@ -12,6 +12,8 @@ import org.springframework.boot.gradle.SpringBootPlugin
  */
 class SpringBootGradle implements Plugin<Project> {
 
+    def springBootVersion = '1.3.3.RELEASE'
+
     @Override
     void apply(Project project) {
 
@@ -22,20 +24,19 @@ class SpringBootGradle implements Plugin<Project> {
             plugins.apply(SpringBootPlugin)
             plugins.apply(SpawnPlugin)
 
-            configurations {
-                dev
+            dependencies {
+                compile "org.springframework.boot:spring-boot:$springBootVersion"
+                compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+                compile "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion"
             }
 
-            dependencies {
-                compile libraries.springboot
-                dev libraries.springbootDev
-            }
+            task("pttgSpringBootGradlePluginUsage", type: UsageTask)
 
             bootRun {
-                classpath = sourceSets.main.runtimeClasspath + configurations.dev
-
+                // todo tune actuator config to disable healthchecks etc in prod, change healthcheck ports, etc
                 systemProperties = [
-                        'endpoints.shutdown.enabled': true
+                    'endpoints.shutdown.enabled': true,
+                    'endpoints.health.sensitive': false
                 ]
             }
 

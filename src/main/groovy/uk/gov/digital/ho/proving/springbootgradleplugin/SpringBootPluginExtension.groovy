@@ -1,4 +1,4 @@
-package uk.gov.digital.ho.proving
+package uk.gov.digital.ho.proving.springbootgradleplugin
 
 /**
  * @Author Home Office Digital

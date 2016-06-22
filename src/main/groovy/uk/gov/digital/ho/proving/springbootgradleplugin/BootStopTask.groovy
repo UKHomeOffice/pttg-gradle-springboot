@@ -1,4 +1,4 @@
-package uk.gov.digital.ho.proving
+package uk.gov.digital.ho.proving.springbootgradleplugin
 
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
