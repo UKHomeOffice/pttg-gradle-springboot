@@ -21,6 +21,9 @@ buildscript {
 apply plugin: 'pttgSpringBootGradle'
 ```
 
+! NOTE - This plugin expects the java plugin to be applied first.
+If you are using the pttgCommonGradlePlugin, ensure it is applied above this one.
+
 3. User guide
 See the following documentation. In your project you can also execute the 'pttgSpringBootGradlePluginUsage' task to
 see usage instructions and version information etc.
