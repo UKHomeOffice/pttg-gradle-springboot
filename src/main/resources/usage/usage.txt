@@ -1,0 +1,30 @@
+************************************ USAGE ********************************************
+pttgSpringBootGradle plugin usage guide
+
+This plugin applies the following configuration
+
+Plugins:
+    SpringBoot
+    Spawn
+
+Dependencies:
+    spring-boot
+    spring-boot-starter-web
+    spring-boot-starter-actuator
+
+The bootRun task is modified to enable:
+   1) detailed responses from the healthcheck endpoint
+   2) the shutdown endpoint
+
+A bootStop task is added
+    This depends on knowing the port where your spring boot app will run
+    The default is 8081
+    You can specify a different value with the following
+
+        springboot{
+            port = 8081 // the port where your spring boot app is running. Required by the bootStop task
+        }
+
+See full details in the plugin readme in github at https://github.com/UKHomeOffice/pttg-gradle-springboot
+
+************************************ END OF USAGE REPORT ******************************

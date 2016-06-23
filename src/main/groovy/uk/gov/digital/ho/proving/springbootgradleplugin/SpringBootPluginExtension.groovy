@@ -5,5 +5,5 @@ package uk.gov.digital.ho.proving.springbootgradleplugin
  */
 class SpringBootPluginExtension {
 
-    def String port = '8081'
+    def port = '8081'
 }
