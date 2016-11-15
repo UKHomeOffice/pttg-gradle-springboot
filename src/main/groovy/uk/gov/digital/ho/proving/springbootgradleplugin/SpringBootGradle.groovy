@@ -5,14 +5,14 @@ import com.wiredforcode.gradle.spawn.SpawnPlugin
 import com.wiredforcode.gradle.spawn.SpawnProcessTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.springframework.boot.gradle.SpringBootPlugin
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
 /**
  * @Author Home Office Digital
  */
 class SpringBootGradle implements Plugin<Project> {
 
-    def springBootVersion = '1.3.3.RELEASE'
+    def springBootVersion = '1.4.1.RELEASE'
 
     @Override
     void apply(Project project) {
